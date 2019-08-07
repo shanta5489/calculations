@@ -1,0 +1,10 @@
+rootProject.name = 'calculations-helper'
+
+include ':calculations-web'
+project(':calculations-web').projectDir = new File('../calculations-web')
+
+include ':calculations-services'
+project(':calculations-services').projectDir = new File('../calculations-services')
+
+include ':calculations-domain'
+project(':calculations-domain').projectDir = new File('../calculations-domain')

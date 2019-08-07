@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'ear'
+}
+
+group 'au.com.accounts'
+version '1.0-SNAPSHOT'
+
+ext.earName = "calcualations-helper"
+
+configurations.earlib.exclude module: "javaee-api"
+
+ear {
+    appDirName "EarContent"
+    libDirName "lib"
+    archiveName earName + "-" + version + "." + extension
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

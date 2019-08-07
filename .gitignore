@@ -1,0 +1,11 @@
+*.bin
+*.lock
+*.name
+*.class
+*.ear
+*.properties
+*.war
+*.MF
+*.jar
+*.xml
+*.iml
