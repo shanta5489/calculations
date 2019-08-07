@@ -1,20 +1,18 @@
 plugins {
     id 'java'
-    id 'ear'
+    id 'war'
 }
+
+ext.warName = "calculations-web"
+
+
+war {
+    archiveName = project.name + ".war"
+}
+
 
 group 'au.com.accounts'
 version '1.0-SNAPSHOT'
-
-ext.earName = "calcualations-helper"
-
-configurations.earlib.exclude module: "javaee-api"
-
-ear {
-    appDirName "EarContent"
-    libDirName "lib"
-    archiveName earName + "-" + version + "." + extension
-}
 
 sourceCompatibility = 1.8
 
@@ -24,4 +22,6 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.webjars', name: 'bootstrap', version: '3.3.7'
+    compile group: 'org.jboss.resteasy', name: 'resteasy-jaxrs', version: '2.2.1.GA'
 }
